@@ -1,6 +1,6 @@
 ## Clone a repository
 
-git clone https://phhung93@bitbucket.org/phhung93/devfood.git
+git clone https://github.com/hungpt2/devfood.git
 
 ---
 
