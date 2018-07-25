@@ -1,0 +1,27 @@
+<div>
+  <div class="modal fade restaurant-modal" [ngClass]="show?'show': ''" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Choose Outlets</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="doHideModal()">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <app-wave [hidden]="!loading"></app-wave>
+          <div class="pretty p-icon p-round" *ngFor="let outlet of outletList;let i = index">
+            <input type="checkbox" [(ngModel)]="selectedOutlet[i]"/>
+            <div class="state">
+              <i class="icon mdi mdi-check"></i>
+              <label> {{outlet.name}}</label>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary w-100" (click)="chooseOutlet()">Submit</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,22 @@
+<div id="main-wrapper">
+  <div class="page-wrapper content-home">
+    <div class="row m-0">
+      <div class="col-xl-9 col-lg-8 col-md-12 col-sm-12 p-0">
+        <div class="w-100 p-fixed bg-white z-index-2">
+          <ap-navigation (scrollCart)="countChange($event)" (doOpenModal)="doOpenModal($event)"></ap-navigation>
+        </div>
+        <div class="bg-e7e7e7 pt-140px">
+          <router-outlet></router-outlet>
+        </div>
+        <footer class="footer bg-e7e7e7">
+          © DevFood 2018
+        </footer>
+      </div>
+      <div class="devfood-cart col-xl-3 col-lg-4 col-md-12 col-sm-12 cart-side-section p-0 bg-white">
+        <df-cart [showCart]="scroll"></df-cart>
+      </div>
+    </div>
+  </div>
+  <app-restaurant [show]="openModal" (hideModal)="hideModal($event)"></app-restaurant>
+  <app-confirm> loading </app-confirm>
+</div>

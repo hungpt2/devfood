@@ -1,0 +1,38 @@
+<div class="category" [id]="value.id" #{{value.id}}>
+    <div class="text-center my-4 pt-3">
+        <h3 class="meal-cat-heading">
+            <span>{{value.name}}</span>
+        </h3>
+    </div>
+    <div class="row m-0">
+        <div class="col-xl-4 col-lg-6 col-md-4 col-sm-6" *ngFor="let item of listProduct.value; let i = index">
+            <div class="meal-card card mb-3">
+                <img class="img-fluid card-img-top" *ngIf="item.display" [src]="item.display.image" [alt]="item.display.serve">
+                <div class="card-block">
+                    <img ng-if="meal.veg_type=='VEG'" class="veg-label-icon" src="/assets/images/veg_icon.png">
+                    <h5 class="card-title">{{item.name}}</h5>
+                    <p class="card-text">{{item.desc}}</p>
+                    <div class="meal-footer d-flex align-items-center m-1">
+                        <div class="w-50 pt-2">
+                            <h5>${{item.price}}</h5>
+                        </div>
+                        <div class="w-50 text-right">
+                            <div [hidden]="item.count > 0">
+                                <button class="btn card-link btn-outline-primary" type="button" (click)="addToCart(item)">Add to Cart</button>
+                            </div>
+                            <div [hidden]="item.count == undefined || item.count == 0">
+                                <table class="float-right">
+                                    <tr>
+                                        <td><button class="btn btn-danger w-38px" (click)="decrementQuantity(item.id)">-</button></td>
+                                        <td class="px-2"><h4>{{item.count}}</h4></td>
+                                        <td><button class="btn btn-success w-38px" (click)="incrementQuantity(item.id)">+</button></td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,33 @@
+.card-img-top {
+    border-top-right-radius: calc(.25rem - 1px);
+    border-top-left-radius: calc(.25rem - 1px);
+}
+
+.img-fluid, .img-thumbnail {
+    height: auto;
+    max-width: 100%;
+}
+
+.card-block {
+    flex: 1 1 auto;
+    padding: 1.25rem;
+}
+
+.veg-label-icon {
+    float: left;
+    height: 15px;
+    width: 15px;
+    margin: 2px 6px 0 0;
+}
+
+.meal-card .card-title {
+    font-size: 1.1rem;
+}
+
+.card-title {
+    margin-bottom: .75rem;
+}
+
+.w-38px {
+    width: 38px;
+}

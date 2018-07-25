@@ -1,0 +1,6 @@
+
+<div>
+    <app-wave [hidden]="!loading"></app-wave>
+    <df-template *ngFor="let item of finalListData; let i = index" [value]="item" [hidden]="loading"></df-template>
+</div>
+

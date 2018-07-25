@@ -1,0 +1,30 @@
+<div  class="col-xl-9 col-lg-8 col-md-12 col-sm-12 p-0">
+  <div class="d-flex py-3">
+    <div class="col-md-2 hidden-md-down">
+      <button class="btn btn-outline-primary back-to-site-link btn-md" type="button">Back to Site</button>
+    </div>
+    <div class="col-12 text-center">
+      <div>
+        <button class="btn btn-primary btn-md hidden-lg-up mx-1 back-to-site-link" type="button">
+          <i class="fa fa-arrow-left"></i>
+        </button>
+        <button class="btn btn-primary btn-md ng-binding" type="button" (click)="outletModalShow()" data-target=".modal">
+          <i class="fa fa-map-marker"></i>
+          {{outlet.name}}
+          <!-- <span> - <b class="ng-binding">Restaurant</b></span> -->
+        </button>
+        <button class="hidden-lg-up mx-1 btn btn-primary btn-md ng-binding" (click)="scroll()">
+            <i class="fa fa-shopping-cart" aria-hidden="true"></i> 0</button>
+      </div>
+    </div>
+  </div>
+  <div class="overflow-auto">
+    <nav class="navbar navbar-light" id="navbar-category">
+      <ul class="nav nav-pills nav-fill w-100">
+        <li class="nav-item" *ngFor="let category of categoryList;let i = index" (click)="categorySelected = category">
+          <a class="nav-link" [ngClass]="categorySelected.id === category.id ? 'active' : ''" href="#{{category.id}}" pageScroll>{{category.name}}</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</div>
